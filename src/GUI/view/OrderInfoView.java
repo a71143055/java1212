@@ -122,5 +122,6 @@ public class OrderInfoView extends JPanel {
                 p2.add(texts[i]);
             }
         }
+        p2.add(btnAdd);
     }
 }
