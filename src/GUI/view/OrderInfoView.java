@@ -18,6 +18,8 @@ public class OrderInfoView extends JPanel {
     JPanel pan1 = new JPanel();
     JPanel pan2 = new JPanel();
 
+    JPanel addPanel = new JPanel(new GridLayout(2,1));
+
     JTextField tfSearch = new JTextField(20);
     DefaultTableModel tableModel;
     JTable table;
@@ -31,6 +33,8 @@ public class OrderInfoView extends JPanel {
 
         add(panN, "North");
         add(panC, "Center");
+
+        panC.add(addPanel, "South");
 
         addPan1();
         addPan2();
@@ -94,5 +98,13 @@ public class OrderInfoView extends JPanel {
             table.setValueAt(orderEntity.getOrderDate(),i,5);
             i++;
         }
+    }
+
+    public void addOrderInfo() {
+        panC.add(addPanel,"South");
+        JPanel p1 = new JPanel();
+        JPanel p2 = new JPanel();
+        addPanel.add(p1);
+        addPanel.add(p2);
     }
 }
