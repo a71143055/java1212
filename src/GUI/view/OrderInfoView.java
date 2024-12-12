@@ -13,11 +13,9 @@ import java.util.ArrayList;
 
 public class OrderInfoView extends JPanel {
     JPanel panN = new JPanel(new GridLayout(2,1));
-    JPanel panC = new JPanel();
-
+    JPanel panC = new JPanel(new BorderLayout(5,20));
     JPanel pan1 = new JPanel();
     JPanel pan2 = new JPanel();
-
     JPanel addPanel = new JPanel(new GridLayout(2,1));
 
     JTextField tfSearch = new JTextField(20);
@@ -39,7 +37,7 @@ public class OrderInfoView extends JPanel {
         addPan1();
         addPan2();
         addTable();
-
+        addOrderInfo();
         initList("");
     }
 
@@ -101,10 +99,28 @@ public class OrderInfoView extends JPanel {
     }
 
     public void addOrderInfo() {
+        JLabel title = new JLabel("주문 정보 입력",JLabel.CENTER);
         panC.add(addPanel,"South");
         JPanel p1 = new JPanel();
         JPanel p2 = new JPanel();
+        addPanel.add(title);
         addPanel.add(p1);
         addPanel.add(p2);
+        addPanel.add(p1);
+        addPanel.add(p2);
+        String[] lblStrs = {"주문번호 : ","고객아이디 :","주문제품 :","수량 :","배송지 :","주문일자 :"};
+        JPanel[] lbls = new JPanel[lblStrs.length];
+        JTextField[] texts = new JTextField[lblStrs.length];
+        for (int i = 0; i < lbls.length; i++) {
+            lbls[i] = new JPanel(lblStrs[i]);
+            texts[i] = new JTextField(20);
+            if (i < 3) {
+                p1.add(lbls[i]);
+                p1.add(texts[i]);
+            }else{
+                p2.add(lbls[i]);
+                p2.add(texts[i]);
+            }
+        }
     }
 }
