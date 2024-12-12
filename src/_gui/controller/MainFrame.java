@@ -1,17 +1,16 @@
-package GUI.controller;
+package _gui.controller;
 
-import GUI.view.OrderInfoView;
+import _gui.view.OrderInfoView;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
+    public static final int FRAME_WIDTH = 900;
+    public static final int FRAME_Height = 500;
 
-    public static final int FRAME_WIDTH = 700;
-    public static final int FRAME_HEIGHT = 500;
-
-    public static int FRAME_X = 300;
-    public static int FRAME_Y = 200;
+    public int frameX = 300;
+    public int frameY = 200;
 
     public MainFrame() {
         super("검색프로그램");
@@ -20,15 +19,15 @@ public class MainFrame extends JFrame {
         double sw = dimension.getWidth();
         double sh = dimension.getHeight();
 
-        FRAME_X = (int)((0.5)*(sw - FRAME_WIDTH));
-        FRAME_Y = (int)((0.5)*(sh - FRAME_HEIGHT));
+        frameX = (int)((0.5)*(sw - FRAME_WIDTH));
+        frameY = (int)((0.5)*(sh - FRAME_Height));
 
         OrderInfoView orderInfoView = new OrderInfoView();
         add(orderInfoView, "Center");
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocation(FRAME_X, FRAME_Y);
-        setSize(FRAME_WIDTH,FRAME_HEIGHT);
+        setLocation(frameX, frameY);
+        setSize(FRAME_WIDTH, FRAME_Height);
         setVisible(true);
     }
 

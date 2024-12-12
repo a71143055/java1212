@@ -1,8 +1,7 @@
-package GUI.entity;
+package _gui.entity;
 
 public class ProductEntity {
     private String productNum;
-    private String productName;
     private String getProductName;
     private int stockNum;
     private int unitPrice;
@@ -12,44 +11,32 @@ public class ProductEntity {
         return productNum;
     }
 
-    public String getProductName() {
-        return productName;
-    }
-
     public String getGetProductName() {
         return getProductName;
-    }
-
-    public int getStockNum() {
-        return stockNum;
-    }
-
-    public int getUnitPrice() {
-        return unitPrice;
-    }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setProductNum(String productNum) {
-        this.productNum = productNum;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
     }
 
     public void setGetProductName(String getProductName) {
         this.getProductName = getProductName;
     }
 
+    public int getStockNum() {
+        return stockNum;
+    }
+
     public void setStockNum(int stockNum) {
         this.stockNum = stockNum;
     }
 
+    public int getUnitPrice() {
+        return unitPrice;
+    }
+
     public void setUnitPrice(int unitPrice) {
         this.unitPrice = unitPrice;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
     }
 
     public void setManufacturer(String manufacturer) {
